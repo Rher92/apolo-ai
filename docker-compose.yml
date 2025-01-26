@@ -1,0 +1,22 @@
+services:
+  web:
+    restart: always
+    environment:
+      - DJANGO_SECRET_KEY=local
+    build: ./
+    command: >
+      bash -c "./manage.py migrate &&
+               ./manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ./:/code
+    ports:
+      - "8000:8000"
+
+  documentation:
+    restart: always
+    build: ./
+    command: "python3 -m mkdocs serve"
+    volumes:
+      - ./:/code
+    ports:
+      - "8001:8001"
