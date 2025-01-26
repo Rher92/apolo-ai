@@ -333,7 +333,7 @@
 	"variable": [
 		{
 			"key": "url",
-			"value": "127.0.0.1",
+			"value": "http://127.0.0.1:8000",
 			"type": "string",
 			"disabled": true
 		}
