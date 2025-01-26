@@ -2,6 +2,7 @@
 	"info": {
 		"_postman_id": "8663b647-4c80-418f-bf6a-fa28d2b1f172",
 		"name": "Apolo AI",
+		"description": "Apolo AI test.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "5518088"
 	},
@@ -16,7 +17,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"products\": [\n        {\"id\": 3, \"quantity\": 4},\n        {\"id\": 100.00, \"quantity\": 5000}\n    ]\n}",
+							"raw": "{\n    \"products\": [\n        {\"id\": 3, \"quantity\": 4}\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -24,14 +25,10 @@
 							}
 						},
 						"url": {
-							"raw": "127.0.0.1:8000/api/v1/orders/",
+							"raw": "{{url}}/api/v1/orders/",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{url}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"v1",
@@ -52,7 +49,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"products\": [\n        {\"id\": 3, \"quantity\": 4}\n        {\"id\": 100,00 \"quantity\": 5000}\n    ]\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -60,14 +57,10 @@
 							}
 						},
 						"url": {
-							"raw": "127.0.0.1:8000/api/v1/orders/",
+							"raw": "{{url}}/api/v1/orders/",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{url}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"v1",
@@ -96,14 +89,10 @@
 							}
 						},
 						"url": {
-							"raw": "127.0.0.1:8000/api/v1/orders/8/",
+							"raw": "{{url}}/api/v1/orders/8/",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{url}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"v1",
@@ -115,7 +104,8 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "This folder contains three requests relates to order creation, list, and retrieve."
 		},
 		{
 			"name": "products",
@@ -126,15 +116,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/products/",
-							"protocol": "http",
+							"raw": "{{url}}/api/v1/products/",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{url}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"v1",
@@ -171,15 +156,10 @@
 							]
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/products/",
-							"protocol": "http",
+							"raw": "{{url}}/api/v1/products/",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{url}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"v1",
@@ -211,15 +191,10 @@
 							]
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/products/4/",
-							"protocol": "http",
+							"raw": "{{url}}/api/v1/products/4/",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{url}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"v1",
@@ -227,7 +202,8 @@
 								"4",
 								""
 							]
-						}
+						},
+						"description": "This request edits name and/or price of a product"
 					},
 					"response": []
 				},
@@ -257,15 +233,10 @@
 							]
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/products/4/update_stock/",
-							"protocol": "http",
+							"raw": "{{url}}/api/v1/products/4/update_stock/",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{url}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"v1",
@@ -274,7 +245,8 @@
 								"update_stock",
 								""
 							]
-						}
+						},
+						"description": "This requests update the stock's products. According the flow variable (IN, OUT) it can add or substract stock"
 					},
 					"response": []
 				},
@@ -284,15 +256,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/products/1/",
-							"protocol": "http",
+							"raw": "{{url}}/api/v1/products/1/",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{url}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"v1",
@@ -310,15 +277,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/products/4/validate_stock/?quantity=3&flow=OUT",
-							"protocol": "http",
+							"raw": "{{url}}/api/v1/products/4/validate_stock/?quantity=3&flow=OUT",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{url}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"v1",
@@ -337,11 +299,43 @@
 									"value": "OUT"
 								}
 							]
-						}
+						},
+						"description": "This request validates if it's possible to create a stock outflow flow."
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "This folder contains six requests related to product."
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "127.0.0.1",
+			"type": "string",
+			"disabled": true
 		}
 	]
 }
