@@ -4,10 +4,12 @@ services:
     environment:
       - DJANGO_SECRET_KEY=local
       - URL=app.rher92.com
+      - DJANGO_CONFIGURATION=Production
+      - DJANGO_SETTINGS_MODULE=apolo.config.production
     build: ./
     command: >
       bash -c "./manage.py migrate &&
-               ./manage.py runserver 0.0.0.0:8000 --settings=apolo.config.production"
+               ./manage.py runserver 0.0.0.0:8000"
     volumes:
       - ./:/code
     ports:

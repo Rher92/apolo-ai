@@ -1,2 +1,2 @@
-from .local import Local  # noqa
-from .production import Production  # noqa
+from apolo.config.local import Local  # noqa
+from apolo.config.production import Production  # noqa
