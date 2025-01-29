@@ -41,9 +41,10 @@ class Common(Configuration):
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
     )
 
-    ALLOWED_HOSTS = ["*"]
+    ALLOWED_HOSTS = ["*", "app.rher92.com"]
     ROOT_URLCONF = 'apolo.urls'
     SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
+    URL = f"http://{os.getenv('URL')}"
     WSGI_APPLICATION = 'apolo.wsgi.application'
 
     # Email

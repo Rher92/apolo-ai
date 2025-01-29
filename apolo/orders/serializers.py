@@ -3,7 +3,10 @@ from apolo.orders.models import Orders, ProductOrders
 from apolo.products.models import Products, Stock, StockTracer
 from rest_framework import serializers
 from django.db import transaction
+from django.conf import settings
 
+
+URL = settings.URL
 
 class ProductOrdersReaderSerializer(serializers.ModelSerializer):
     class Meta:
@@ -27,7 +30,7 @@ class OrderSerializer(serializers.Serializer):
 
     @classmethod
     def get_product(cls, id):
-        response = requests.get(f"http://127.0.0.1:8000/api/v1/products/?id={id}")
+        response = requests.get(f"{URL}/api/v1/products/?id={id}")
         if response.ok:
             product = response.json()["results"]
             if not product:
@@ -37,7 +40,7 @@ class OrderSerializer(serializers.Serializer):
     
     @classmethod
     def verify_stock(cls, id, quantity):
-        response = requests.get(f"http://127.0.0.1:8000/api/v1/products/{id}/validate_stock/?quantity={quantity}&flow=OUT")
+        response = requests.get(f"{URL}/api/v1/products/{id}/validate_stock/?quantity={quantity}&flow=OUT")
         if response.ok:
             product = response.json()
             if not product:
@@ -56,7 +59,7 @@ class OrderSerializer(serializers.Serializer):
         flow = "OUT"
         payload = {'quantity': quantity, 'flow': flow}
 
-        response = requests.put(f"http://127.0.0.1:8000/api/v1/products/{product_id}/update_stock/", data=payload)
+        response = requests.put(f"{URL}/api/v1/products/{product_id}/update_stock/", data=payload)
         tracer_id = response.json()["tracer_id"]
         return tracer_id
 

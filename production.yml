@@ -3,11 +3,11 @@ services:
     restart: always
     environment:
       - DJANGO_SECRET_KEY=local
-      - URL=127.0.0.1:8000
+      - URL=app.rher92.com
     build: ./
     command: >
       bash -c "./manage.py migrate &&
-               ./manage.py runserver 0.0.0.0:8000 --settings=apolo.config.local"
+               ./manage.py runserver 0.0.0.0:8000 --settings=apolo.config.production"
     volumes:
       - ./:/code
     ports:
