@@ -4,8 +4,6 @@ services:
     environment:
       - DJANGO_SECRET_KEY=local
       - URL=app.rher92.com
-      - DJANGO_CONFIGURATION=Production
-      - DJANGO_SETTINGS_MODULE=apolo.config.production
     build: ./
     command: >
       bash -c "./manage.py migrate &&
